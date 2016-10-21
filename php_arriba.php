@@ -229,7 +229,7 @@ VALUES
 
 //ejecución de querys
 if(mysqli_query($link,$sql)){ 
-        print "Curso Creado Con exito"; 
+        print "Pruebas Creadas Exitosamente"; 
     }else{ 
         print "<br>No ha sido posible crear el curso. Existe un error en la query name='SQL'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -238,7 +238,7 @@ if(mysqli_query($link,$sql)){
 	$idcurso=mysqli_insert_id($link);
 
 if(mysqli_query($link,$sql10)){ 
-        print "Curso ingresado a tabla mdlhj_grade_categories con exito."; 
+        print ""; 
     }else{ 
         print "<br>No ha sido posible ingresar curso a mdlhj_grade_categories. Existe un error en la query name='SQL10'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -246,7 +246,7 @@ if(mysqli_query($link,$sql10)){
     } 
 
 if(mysqli_query($link,$sql11)){ 
-        print "<br>Tabla mdlhj_grade_categories actualizada correctamente</br>"; 
+        print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar la tabla mdlhj_grade_categories. Existe un error en la query name='SQL11'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -254,14 +254,14 @@ if(mysqli_query($link,$sql11)){
     } 
 
 if(mysqli_query($link,$sql1)){ 
-        print "<br>Número de secciones modificado con éxito</br>"; 
+        print ""; 
     }else{ 
         print "<br>No ha sido posible modificar el número de secciones. Existe un error en la query name='SQL1'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     } 
 if(mysqli_query($link,$sql2)){ 
-        print "La cantidad de cursos de la categoria ingresada ha sido actualizada"; 
+        print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar el número de cursos en la categoria. Existe un error en la query name='SQL2'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -269,7 +269,7 @@ if(mysqli_query($link,$sql2)){
     } 
 	
 if(mysqli_query($link,$sql6)){ 
-       print "<br>El cuestionario técnico ha sido creado</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear el cuestionario técnico. Existe un error en la query name='SQL6'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -277,7 +277,7 @@ if(mysqli_query($link,$sql6)){
     }     
 
 if(mysqli_query($link,$sql12)){ 
-       print "<br>El cuestionario técnico ha sido ingresado a la tabla grade_items</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible ingresar cuestionario técnico a la tabla grade_items. Existe un error en la query name='SQL12'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -285,7 +285,7 @@ if(mysqli_query($link,$sql12)){
     }  
 
 if(mysqli_query($link,$sql4)){ 
-       print "El nombre de los temas (sección 1) ha sido actualizada"; 
+       print ""; 
     }else{ 
         print "<brNo ha sido posible actualizar el nombre de los temas. Existe un error en la query name='SQL4'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -293,7 +293,7 @@ if(mysqli_query($link,$sql4)){
     } 	
 	
 if(mysqli_query($link,$sql7)){ 
-       print "<br>El cuestionario de Técnico ha sido creado </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear el cuestionario tecnico. Existe un error en la query name='SQL7'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -301,7 +301,7 @@ if(mysqli_query($link,$sql7)){
     }  
 	
 if(mysqli_query($link,$sql3)){ 
-       print "<br>El nombre de los temas (sección 0) ha sido actualizada</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar el nombre de los temas. Existe un error en la query name='SQL3'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -310,7 +310,7 @@ if(mysqli_query($link,$sql3)){
 
 
 if(mysqli_query($link,$sql5)){ 
-       print "<br>El nombre de los temas (sección 2) ha sido actualizada</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar el nombre de los temas. Existe un error en la query name='SQL5'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -320,7 +320,7 @@ if(mysqli_query($link,$sql5)){
 
 
 if(mysqli_query($link,$sql13)){ 
-       print "<br>La tabla mdlhj_grade_categories_history ha sido actualizada</br>"; 
+       print ""; 
     }else{ 
         print "<br>Existe un error en la query name='SQL13'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -329,7 +329,7 @@ if(mysqli_query($link,$sql13)){
 
 
 if(mysqli_query($link,$sql14)){ 
-       print "<br>El certificado ha sido creado </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear el certificado. Existe un error en la query name='SQL14'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -337,7 +337,7 @@ if(mysqli_query($link,$sql14)){
     }  
 
   if(mysqli_query($link,$sql15)){ 
-       print "<br>Se ha modificado la tbla _quiz_sections correctamente </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible modificar la tabla _quiz_sections. Existe un error en la query name='SQL15'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -345,7 +345,7 @@ if(mysqli_query($link,$sql14)){
     }  
 	
 if(mysqli_query($link,$sql16)){ 
-       print "<br>Se ha actualizado correctamente la tabla mdlhj_course_sections </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible modificar la tabla _course_sections. Existe un error en la query name='SQL16'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -353,7 +353,7 @@ if(mysqli_query($link,$sql16)){
     } 
 
 if(mysqli_query($link,$sql8)){ 
-       print "<br>La prueba de seguridad ha sido creada correctamente </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la prueba de seguridad. Existe un error en la query name='SQL8'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -361,7 +361,7 @@ if(mysqli_query($link,$sql8)){
     }    
 			
 if(mysqli_query($link,$sql18)){ 
-       print "<br>La prueba de seguridad ha sido creada correctamente </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la prueba de seguridad. Existe un error en la query name='SQL8'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -377,7 +377,7 @@ if(mysqli_query($link,$sql61)){
     }  
 		
 if(mysqli_query($link,$sql19)){ 
-       print "<br>La prueba de seguridad ha sido creada correctamente </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la prueba de seguridad. Existe un error en la query name='SQL8'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -385,7 +385,7 @@ if(mysqli_query($link,$sql19)){
     }  
 		
 if(mysqli_query($link,$sql20)){ 
-       print "<br>La prueba de seguridad ha sido creada correctamente </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la prueba de seguridad. Existe un error en la query name='SQL20'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -393,7 +393,7 @@ if(mysqli_query($link,$sql20)){
     }  
 		
 if(mysqli_query($link,$sql21)){ 
-       print "<br>La prueba de seguridad ha sido creada correctamente </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la prueba de seguridad. Existe un error en la query name='SQL21'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -406,7 +406,7 @@ if(mysqli_query($link,$sql21)){
 //------------------------------------------------------------------------------------------------------------------
 
 if(mysqli_query($link,$sql22)){ 
-       print "<br>La pregunta 1 TECNICA fue creada</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL22'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -426,14 +426,14 @@ if(mysqli_query($link,$sql22)){
 	and name='Prueba Tecnica'), '1','0', " . $id. ",'1.0000000');";
 	
 if(mysqli_query($link,$sql23)){ 
-       print "<br>Se actualizó question </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar question. Existe un error en la query name='SQL23'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }  
 if(mysqli_query($link,$sql32)){ 
-       print "<br>La tabla quiz ha sido modificada (1)</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL32'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -442,7 +442,7 @@ if(mysqli_query($link,$sql32)){
 	
 //---------------------------Pregunta 2------
 if(mysqli_query($link,$sql24)){ 
-       print "<br>La pregunta 2 TECNICA fue creada</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL24'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -461,14 +461,14 @@ if(mysqli_query($link,$sql24)){
 	and name='Prueba Tecnica'), '1','0', $id,'1.0000000');";
 
 if(mysqli_query($link,$sql28)){ 
-       print "<br>Se actualizó question </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar question. Existe un error en la query name='SQL28'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }  
 if(mysqli_query($link,$sql33)){ 
-       print "<br>La tabla quiz ha sido modificada (2)</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL33'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -477,7 +477,7 @@ if(mysqli_query($link,$sql33)){
 	
 //--------------------------Pregunta 3 --
 if(mysqli_query($link,$sql25)){ 
-       print "<br>La pregunta 3 TECNICA fue creada</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL22'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -496,14 +496,14 @@ if(mysqli_query($link,$sql25)){
 	and name='Prueba Tecnica'), '1','0', $id,'1.0000000');";
 	
 if(mysqli_query($link,$sql29)){ 
-       print "<br>Se actualizó question </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar question. Existe un error en la query name='SQL29'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }
 if(mysqli_query($link,$sql34)){ 
-       print "<br>La tabla quiz ha sido modificada (3)</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL34'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -511,7 +511,7 @@ if(mysqli_query($link,$sql34)){
 	}
 //-----------------------------Pregunta 4--
 if(mysqli_query($link,$sql26)){ 
-       print "<br>La pregunta 4 TECNICA fue creada</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL22'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -530,14 +530,14 @@ if(mysqli_query($link,$sql26)){
 	and name='Prueba Tecnica'), '1','0', $id,'1.0000000');";
 	
 if(mysqli_query($link,$sql30)){ 
-       print "<br>Se actualizó question </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar question. Existe un error en la query name='SQL30'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }  
 if(mysqli_query($link,$sql35)){ 
-       print "<br>La tabla quiz ha sido modificada (4)</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL35'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -546,7 +546,7 @@ if(mysqli_query($link,$sql35)){
 
 //-----------------------------Pregunta 5----
 if(mysqli_query($link,$sql27)){ 
-       print "<br>La pregunta 5 TECNICA fue creada</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL22'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -565,14 +565,14 @@ if(mysqli_query($link,$sql27)){
 	and name='Prueba Tecnica'), '1','0', $id,'1.0000000');";
 	
 if(mysqli_query($link,$sql31)){ 
-       print "<br>Se actualizó question </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar question. Existe un error en la query name='SQL31'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }  
 if(mysqli_query($link,$sql36)){ 
-       print "<br>La tabla quiz ha sido modificada (5)</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL36'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -585,7 +585,7 @@ if(mysqli_query($link,$sql36)){
 //------------------------------------------------------------------------------------------------------------------
 
 if(mysqli_query($link,$sql38)){ 
-       print "<br>La pregunta 1 SEGURIDAD fue creada</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL38'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -605,14 +605,14 @@ if(mysqli_query($link,$sql38)){
 	and name='Prueba Seguridad'), '1','0', " . $id. ",'1.0000000');";
 	
 if(mysqli_query($link,$sql43)){ 
-       print "<br>Se actualizó question </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar question. Existe un error en la query name='SQL43'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }  
 if(mysqli_query($link,$sql44)){ 
-       print "<br>La tabla quiz ha sido modificada (1)</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL44'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -621,7 +621,7 @@ if(mysqli_query($link,$sql44)){
 	
 //---------------------------Pregunta 2------
 if(mysqli_query($link,$sql39)){ 
-       print "<br>La pregunta 2 SEGURIDAD fue creada</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL39'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -640,14 +640,14 @@ if(mysqli_query($link,$sql39)){
 	and name='Prueba Seguridad'), '1','0', $id,'1.0000000');";
 
 if(mysqli_query($link,$sql45)){ 
-       print "<br>Se actualizó question </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar question. Existe un error en la query name='SQL45'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }  
 if(mysqli_query($link,$sql46)){ 
-       print "<br>La tabla quiz ha sido modificada (2)</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL46'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -656,7 +656,7 @@ if(mysqli_query($link,$sql46)){
 	
 //--------------------------Pregunta 3 --
 if(mysqli_query($link,$sql40)){ 
-       print "<br>La pregunta 3 SEGURIDAD fue creada</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL40'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -675,14 +675,14 @@ if(mysqli_query($link,$sql40)){
 	and name='Prueba Seguridad'), '1','0', $id,'1.0000000');";
 	
 if(mysqli_query($link,$sql47)){ 
-       print "<br>Se actualizó question </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar question. Existe un error en la query name='SQL47'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }
 if(mysqli_query($link,$sql48)){ 
-       print "<br>La tabla quiz ha sido modificada (3)</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL48'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -690,7 +690,7 @@ if(mysqli_query($link,$sql48)){
 	}
 //-----------------------------Pregunta 4--
 if(mysqli_query($link,$sql41)){ 
-       print "<br>La pregunta 4 SEGURIDAD fue creada</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL41'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -709,14 +709,14 @@ if(mysqli_query($link,$sql41)){
 	and name='Prueba Seguridad'), '1','0', $id,'1.0000000');";
 	
 if(mysqli_query($link,$sql49)){ 
-       print "<br>Se actualizó question </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar question. Existe un error en la query name='SQL49'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }  
 if(mysqli_query($link,$sql50)){ 
-       print "<br>La tabla quiz ha sido modificada (4)</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL50'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -725,7 +725,7 @@ if(mysqli_query($link,$sql50)){
 
 //-----------------------------Pregunta 5----
 if(mysqli_query($link,$sql42)){ 
-       print "<br>La pregunta 5 SEGURIDAD fue creada</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL42'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -744,14 +744,14 @@ if(mysqli_query($link,$sql42)){
 	and name='Prueba Seguridad'), '1','0', $id,'1.0000000');";
 	
 if(mysqli_query($link,$sql51)){ 
-       print "<br>Se actualizó question </br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar question. Existe un error en la query name='SQL51'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }  
 if(mysqli_query($link,$sql52)){ 
-       print "<br>La tabla quiz ha sido modificada (5)</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible crear la pregunta. Existe un error en la query name='SQL52'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -764,7 +764,7 @@ $sql53="update mdlhj_course set fullname=concat((select categoryname from mdlhj_
  /id=',$idcurso) where id=$idcurso ;";
 
 if(mysqli_query($link,$sql53)){ 
-       print "<br>Se actualizó correctamente el fullname del curso</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar el nombre del curso. Existe un error en la query name='SQL53'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -775,7 +775,7 @@ $sql54="update mdlhj_course set shortname=concat((select categoryname from mdlhj
  /id=',$idcurso) where id=$idcurso ;";
 
 if(mysqli_query($link,$sql54)){ 
-       print "<br>Se actualizó correctamente el shortname del curso</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible actualizar el nombre del curso. Existe un error en la query name='SQL53'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -790,7 +790,7 @@ VALUES ('manual', '0', $idcurso, '0', '0','0','0','0','0','0','$Time','$Time');"
 
 
 if(mysqli_query($link,$sql37)){ 
-       print "<br>Se agrego correctamente el método de matriculación MANUAL</br>"; 
+       print ""; 
     }else{ 
         print "<br>No ha sido posible agregar el metodo de matriculación MANUAL. Existe un error en la query name='SQL37'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -809,7 +809,7 @@ $sql56= "INSERT INTO mdlhj_course_format_options(courseid,format,sectionid,name,
 if(mysqli_query($link,$sql55)){ 
        print ""; 
     }else{ 
-        print "<br> Existe un error en la query name='SQL55'<br>"; 
+        print ""; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }	
