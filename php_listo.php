@@ -24,7 +24,11 @@ VALUES ('2',(select id from mdlhj_grade_categories where courseid=(select id fro
 
 $sql11="UPDATE mdlhj_grade_categories set path= concat('/',id,'/') where courseid=(SELECT id FROM mdlhj_course WHERE fullname='" . $Nombre . "' and category=" . $Categoria .");";
 
+
 $sql1= "INSERT INTO mdlhj_course_format_options(courseid,format,sectionid,name,value) values ((SELECT id FROM mdlhj_course WHERE fullname='" . $Nombre . "' and category=" . $Categoria ."),'topics','0','numsections', '2');";
+$sql53= "INSERT INTO mdlhj_course_format_options(courseid,format,sectionid,name,value) values ((SELECT id FROM mdlhj_course WHERE fullname='" . $Nombre . "' and category=" . $Categoria ."),'topics','0','hiddensections', '0');";
+$sql54= "INSERT INTO mdlhj_course_format_options(courseid,format,sectionid,name,value) values ((SELECT id FROM mdlhj_course WHERE fullname='" . $Nombre . "' and category=" . $Categoria ."),'topics','0','coursedisplay', '0');";
+
 
 $sql2="UPDATE mdlhj_course_categories set coursecount=coursecount+1 where id=$Categoria;";
 
@@ -716,5 +720,22 @@ if(mysqli_query($link,$sql37)){
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }	
+	
+	if(mysqli_query($link,$sql53)){ 
+       print "<br>Se agrego correctamente el método de matriculación MANUAL</br>"; 
+    }else{ 
+        print "<br>No ha sido posible agregar el metodo de matriculación MANUAL. Existe un error en la query name='SQL53'<br>"; 
+        print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
+        exit(); 
+    }	
+	if(mysqli_query($link,$sql54)){ 
+       print "<br>Se agrego correctamente el método de matriculación MANUAL</br>"; 
+    }else{ 
+        print "<br>No ha sido posible agregar el metodo de matriculación MANUAL. Existe un error en la query name='SQL54'<br>"; 
+        print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
+        exit(); 
+    }	
+	
+	
 	
 mysqli_close($link); 

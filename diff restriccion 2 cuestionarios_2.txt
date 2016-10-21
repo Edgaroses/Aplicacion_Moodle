@@ -1,0 +1,1287 @@
+Launching console ...
+
+Welcome to the MySQL Utilities Client (mysqluc) version 1.6.4
+Copyright (c) 2010, 2016 Oracle and/or its affiliates. All rights reserved.
+This is a release of dual licensed MySQL Utilities. For the avoidance of
+doubt, this particular copy of the software is released
+under the version 2 of the GNU General Public License.
+MySQL Utilities is brought to you by Oracle.
+
+Type 'help' for a list of commands or press TAB twice for list of utilities.
+
+mysqluc> mysqldbcompare --server1=root:@localhost bnexcl_moodle_respaldo:bnexcl_moodle --run-all-tests
+# WARNING: Using a password on the command line interface can be insecure.
+# server1 on localhost: ... connected.
+# Checking databases bnexcl_moodle_respaldo and bnexcl_moodle on server1
+#
+                                                                                                                       #                                                   Defn    Row     Data
+# Type      Object Name                             Diff    Count   Check
+# -------------------------------------------------------------------------
+# TABLE     mdlhj_assign                            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assign_grades                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assign_plugin_config              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assign_submission                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assign_user_flags                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assign_user_mapping               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assignfeedback_comments           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assignfeedback_editpdf_annot      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assignfeedback_editpdf_cmnt       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assignfeedback_editpdf_queue      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assignfeedback_editpdf_quick      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assignfeedback_file               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assignment                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assignment_submissions            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assignment_upgrade                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assignsubmission_file             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_assignsubmission_onlinetext       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_backup_controllers                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_backup_courses                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_backup_logs                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_badge                             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_badge_backpack                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_badge_criteria                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_badge_criteria_met                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_badge_criteria_param              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_badge_external                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_badge_issued                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_badge_manual_award                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_block                             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_block_community                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_block_configurable_reports        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_block_instances                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_block_positions                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_block_recent_activity             FAIL    FAIL    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  FAIL
+#
+# Object definitions differ. (--changes-for=server1)
+#
+
+--- `bnexcl_moodle_respaldo`.`mdlhj_block_recent_activity`
++++ `bnexcl_moodle`.`mdlhj_block_recent_activity`
+@@ -8,4 +8,4 @@
+   `modname` varchar(20) DEFAULT NULL,
+   PRIMARY KEY (`id`),
+   KEY `mdlhj_blocreceacti_coutim_ix` (`courseid`,`timecreated`)
+-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8 COMMENT='Recent activity block'
++) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8 COMMENT='Recent activity block'
+# Row counts are not the same among `bnexcl_moodle_respaldo`.`mdlhj_block_recent_activity` and `bnexcl_moodle`.`mdlhj_block_recent_activity`.
+#
+
+# Rows in `bnexcl_moodle`.`mdlhj_block_recent_activity` not in `bnexcl_moodle_respaldo`.`mdlhj_block_recent_activity`
++-----+-----------+-------+--------------+---------+---------+----------+
+| id  | courseid  | cmid  | timecreated  | userid  | action  | modname  |
++-----+-----------+-------+--------------+---------+---------+----------+
+| 85  | 59        | 142   | 1476887917   | 2       | 1       | None     |
++-----+-----------+-------+--------------+---------+---------+----------+
+
+# TABLE     mdlhj_block_rss_client                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_blog_association                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_blog_external                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_book                              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_book_chapters                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_bootstrapelements                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_cache_filters                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_cache_flags                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_capabilities                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_category_relation                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_certificate                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  FAIL
+#
+# Data differences found among rows:
+--- `bnexcl_moodle_respaldo`.`mdlhj_certificate`
++++ `bnexcl_moodle`.`mdlhj_certificate`
+@@ -1,5 +1,5 @@
+ +-----+---------+---------------------+--------+--------------+----------------+--------------+-----------+-------------+-----------+---------------+------------------+--------------+--------------+--------------+-------------+------------+----------+--------------+-------------+-----------+---------------+-------------+---------------+-------------+-----------------+------------+--------------+---------------+
+ | id  | course  | name                | intro  | introformat  | emailteachers  | emailothers  | savecert  | reportcert  | delivery  | requiredtime  | certificatetype  | orientation  | borderstyle  | bordercolor  | printwmark  | printdate  | datefmt  | printnumber  | printgrade  | gradefmt  | printoutcome  | printhours  | printteacher  | customtext  | printsignature  | printseal  | timecreated  | timemodified  |
+ +-----+---------+---------------------+--------+--------------+----------------+--------------+-----------+-------------+-----------+---------------+------------------+--------------+--------------+--------------+-------------+------------+----------+--------------+-------------+-----------+---------------+-------------+---------------+-------------+-----------------+------------+--------------+---------------+
+-| 20  | 59      | certificado prueba  |        | 1            | 0              |              | 0         | 0           | 0         | 0             | A4_non_embedded  | L            | 0            | 0            | 0           | 0          | 1        | 0            | 0           | 1         | 0             |             | 0             |             | 0               | 0          | 1476887413   | 1476887413    |
++| 20  | 59      | certificado prueba  |        | 1            | 0              |              | 0         | 0           | 0         | 0             | A4_non_embedded  | L            | 0            | 0            | 0           | 0          | 1        | 0            | 0           | 1         | 0             |             | 0             |             | 0               | 0          | 1476887413   | 1476887917    |
+ +-----+---------+---------------------+--------+--------------+----------------+--------------+-----------+-------------+-----------+---------------+------------------+--------------+--------------+--------------+-------------+------------+----------+--------------+-------------+-----------+---------------+-------------+---------------+-------------+-----------------+------------+--------------+---------------+
+
+# TABLE     mdlhj_certificate_issues                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_chat                              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_chat_messages                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_chat_messages_current             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_chat_users                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_choice                            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_choice_answers                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_choice_options                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_cohort                            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_cohort_members                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_comments                          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_coursecomp             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_coursecompsetting      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_evidence               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_framework              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_modulecomp             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_plan                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_plancomp               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_relatedcomp            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_template               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_templatecohort         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_templatecomp           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_usercomp               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_usercompcourse         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_usercompplan           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_userevidence           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_competency_userevidencecomp       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_config                            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_config_log                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_config_plugins                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_context                           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_context_temp                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_course                            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  FAIL
+#
+# Data differences found among rows:
+--- `bnexcl_moodle_respaldo`.`mdlhj_course`
++++ `bnexcl_moodle`.`mdlhj_course`
+@@ -1,5 +1,5 @@
+ +-----+-----------+------------+---------------------+------------+-----------+---------------------------------------------------------------------------------+----------------+---------+-------------+------------+-------------+---------+-----------+--------------+--------------+----------+-------------+------------+-----------------+--------------------+-------+---------------+--------+--------------+---------------+------------+-------------------+-------------------+-------------+
+ | id  | category  | sortorder  | fullname            | shortname  | idnumber  | summary                                                                         | summaryformat  | format  | showgrades  | newsitems  | startdate   | marker  | maxbytes  | legacyfiles  | showreports  | visible  | visibleold  | groupmode  | groupmodeforce  | defaultgroupingid  | lang  | calendartype  | theme  | timecreated  | timemodified  | requested  | enablecompletion  | completionnotify  | cacherev    |
+ +-----+-----------+------------+---------------------+------------+-----------+---------------------------------------------------------------------------------+----------------+---------+-------------+------------+-------------+---------+-----------+--------------+--------------+----------+-------------+------------+-----------------+--------------------+-------+---------------+--------+--------------+---------------+------------+-------------------+-------------------+-------------+
+-| 59  | 97        | 880001     | Pruebas de Ejemplo  | PPEJ       |           | <p>Este curso contiene varios ejemplos de pruebas para el cambio de Tramos</p>  | 1              | topics  | 1           | 5          | 1475550000  | 0       | 0         | 0            | 0            | 1        | 1           | 0          | 0               | 0                  |       |               |        | 1475518844   | 1475518844    | 0          | 1                 | 0                 | 1476887415  |
++| 59  | 97        | 880001     | Pruebas de Ejemplo  | PPEJ       |           | <p>Este curso contiene varios ejemplos de pruebas para el cambio de Tramos</p>  | 1              | topics  | 1           | 5          | 1475550000  | 0       | 0         | 0            | 0            | 1        | 1           | 0          | 0               | 0                  |       |               |        | 1475518844   | 1475518844    | 0          | 1                 | 0                 | 1476887917  |
+ +-----+-----------+------------+---------------------+------------+-----------+---------------------------------------------------------------------------------+----------------+---------+-------------+------------+-------------+---------+-----------+--------------+--------------+----------+-------------+------------+-----------------+--------------------+-------+---------------+--------+--------------+---------------+------------+-------------------+-------------------+-------------+
+
+# TABLE     mdlhj_course_categories                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_course_completion_aggr_methd      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_course_completion_crit_compl      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_course_completion_criteria        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_course_completions                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_course_format_options             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_course_modules                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  FAIL
+#
+# Data differences found among rows:
+--- `bnexcl_moodle_respaldo`.`mdlhj_course_modules`
++++ `bnexcl_moodle`.`mdlhj_course_modules`
+@@ -1,5 +1,5 @@
+-+------+---------+---------+-----------+----------+-----------+-------------+--------+---------+----------+-------------+------------+-------------+-------------+----------------------------+-----------------+---------------------+------------------+---------------+
+-| id   | course  | module  | instance  | section  | idnumber  | added       | score  | indent  | visible  | visibleold  | groupmode  | groupingid  | completion  | completiongradeitemnumber  | completionview  | completionexpected  | showdescription  | availability  |
+-+------+---------+---------+-----------+----------+-----------+-------------+--------+---------+----------+-------------+------------+-------------+-------------+----------------------------+-----------------+---------------------+------------------+---------------+
+-| 142  | 59      | 27      | 20        | 137      |           | 1476887413  | 0      | 0       | 1        | 1           | 0          | 0           | 1           | None                       | 0               | 0                   | 0                | None          |
+-+------+---------+---------+-----------+----------+-----------+-------------+--------+---------+----------+-------------+------------+-------------+-------------+----------------------------+-----------------+---------------------+------------------+---------------+
+++------+---------+---------+-----------+----------+-----------+-------------+--------+---------+----------+-------------+------------+-------------+-------------+----------------------------+-----------------+---------------------+------------------+---------------------------------------------------------------------------------------------------------------+
++| id   | course  | module  | instance  | section  | idnumber  | added       | score  | indent  | visible  | visibleold  | groupmode  | groupingid  | completion  | completiongradeitemnumber  | completionview  | completionexpected  | showdescription  | availability                                                                                                  |
+++------+---------+---------+-----------+----------+-----------+-------------+--------+---------+----------+-------------+------------+-------------+-------------+----------------------------+-----------------+---------------------+------------------+---------------------------------------------------------------------------------------------------------------+
++| 142  | 59      | 27      | 20        | 137      |           | 1476887413  | 0      | 0       | 1        | 1           | 0          | 0           | 1           | None                       | 0               | 0                   | 0                | {"op":"&","c":[{"type":"completion","cm":51,"e":3},{"type":"completion","cm":52,"e":3}],"showc":[true,true]}  |
+++------+---------+---------+-----------+----------+-----------+-------------+--------+---------+----------+-------------+------------+-------------+-------------+----------------------------+-----------------+---------------------+------------------+---------------------------------------------------------------------------------------------------------------+
+
+# TABLE     mdlhj_course_modules_completion         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_course_published                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_course_request                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_course_sections                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_customcert                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_customcert_elements               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_customcert_issues                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_customcert_pages                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_customcert_templates              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_data                              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_data_content                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_data_fields                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_data_records                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_editor_atto_autosave              FAIL    FAIL    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  FAIL
+#
+# Object definitions differ. (--changes-for=server1)
+#
+
+--- `bnexcl_moodle_respaldo`.`mdlhj_editor_atto_autosave`
++++ `bnexcl_moodle`.`mdlhj_editor_atto_autosave`
+@@ -10,4 +10,4 @@
+   `timemodified` bigint(10) NOT NULL DEFAULT '0',
+   PRIMARY KEY (`id`),
+   UNIQUE KEY `mdlhj_editattoauto_eleconu_uix` (`elementid`,`contextid`,`userid`,`pagehash`)
+-) ENGINE=InnoDB AUTO_INCREMENT=3792 DEFAULT CHARSET=utf8 COMMENT='Draft text that is auto-saved every 5 seconds while an edito'
++) ENGINE=InnoDB AUTO_INCREMENT=3794 DEFAULT CHARSET=utf8 COMMENT='Draft text that is auto-saved every 5 seconds while an edito'
+# Row counts are not the same among `bnexcl_moodle_respaldo`.`mdlhj_editor_atto_autosave` and `bnexcl_moodle`.`mdlhj_editor_atto_autosave`.
+#
+
+# Rows in `bnexcl_moodle`.`mdlhj_editor_atto_autosave` not in `bnexcl_moodle_respaldo`.`mdlhj_editor_atto_autosave`
++-------+-----------------+------------+-------------------------------------------+---------+------------+------------+---------------------------------+---------------+
+| id    | elementid       | contextid  | pagehash                                  | userid  | drafttext  | draftid    | pageinstance                    | timemodified  |
++-------+-----------------+------------+-------------------------------------------+---------+------------+------------+---------------------------------+---------------+
+| 3793  | id_introeditor  | 657        | 41c221479f6a865a7ac18f06272a973c6a6d22b1  | 2       |            | 858245849  | yui_3_17_2_1_1476887967125_324  | 1476887968    |
++-------+-----------------+------------+-------------------------------------------+---------+------------+------------+---------------------------------+---------------+
+
+# TABLE     mdlhj_enrol                             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_enrol_flatfile                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_enrol_lti_tools                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_enrol_lti_users                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_enrol_paypal                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_event                             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_event_subscriptions               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_events_handlers                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_events_queue                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_events_queue_handlers             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_external_functions                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_external_services                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_external_services_functions       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_external_services_users           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_external_tokens                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_feedback                          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_feedback_completed                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_feedback_completedtmp             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_feedback_item                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_feedback_sitecourse_map           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_feedback_template                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_feedback_value                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_feedback_valuetmp                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_files                             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_files_reference                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_filter_active                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_filter_config                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_folder                            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_forum                             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_forum_digests                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_forum_discussion_subs             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_forum_discussions                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_forum_posts                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_forum_queue                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_forum_read                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_forum_subscriptions               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_forum_track_prefs                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_glossary                          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_glossary_alias                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_glossary_categories               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_glossary_entries                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_glossary_entries_categories       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_glossary_formats                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_categories                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_categories_history          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_grades                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_grades_history              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_import_newitem              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_import_values               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_items                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_items_history               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_letters                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_outcomes                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_outcomes_courses            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_outcomes_history            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grade_settings                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grading_areas                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grading_definitions               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_grading_instances                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_gradingform_guide_comments        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_gradingform_guide_criteria        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_gradingform_guide_fillings        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_gradingform_rubric_criteria       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_gradingform_rubric_fillings       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_gradingform_rubric_levels         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_groupings                         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_groupings_groups                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_groups                            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_groups_members                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_imscp                             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_label                             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lesson                            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lesson_answers                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lesson_attempts                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lesson_branch                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lesson_grades                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lesson_overrides                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lesson_pages                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lesson_timer                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_license                           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lock_db                           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_log                               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_log_display                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_log_queries                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_logstore_standard_log             FAIL    FAIL    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  FAIL
+#
+# Object definitions differ. (--changes-for=server1)
+#
+
+--- `bnexcl_moodle_respaldo`.`mdlhj_logstore_standard_log`
++++ `bnexcl_moodle`.`mdlhj_logstore_standard_log`
+@@ -25,4 +25,4 @@
+   KEY `mdlhj_logsstanlog_couanotim_ix` (`courseid`,`anonymous`,`timecreated`),
+   KEY `mdlhj_logsstanlog_useconcon_ix` (`userid`,`contextlevel`,`contextinstanceid`,`crud`,`edulevel`,`timecreated`),
+   KEY `mdlhj_logsstanlog_con_ix` (`contextid`)
+-) ENGINE=InnoDB AUTO_INCREMENT=6673 DEFAULT CHARSET=utf8 COMMENT='Standard log table'
++) ENGINE=InnoDB AUTO_INCREMENT=6676 DEFAULT CHARSET=utf8 COMMENT='Standard log table'
+# Row counts are not the same among `bnexcl_moodle_respaldo`.`mdlhj_logstore_standard_log` and `bnexcl_moodle`.`mdlhj_logstore_standard_log`.
+#
+
+# Rows in `bnexcl_moodle`.`mdlhj_logstore_standard_log` not in `bnexcl_moodle_respaldo`.`mdlhj_logstore_standard_log`
++-------+------------------------------------+------------+----------+----------------+-----------------+-----------+-------+-----------+------------+---------------+--------------------+---------+-----------+----------------+------------+--------------------------------------------------------------------------------------------------------------+--------------+---------+------------------+-------------+
+| id    | eventname                          | component  | action   | target         | objecttable     | objectid  | crud  | edulevel  | contextid  | contextlevel  | contextinstanceid  | userid  | courseid  | relateduserid  | anonymous  | other                                                                                                        | timecreated  | origin  | ip               | realuserid  |
++-------+------------------------------------+------------+----------+----------------+-----------------+-----------+-------+-----------+------------+---------------+--------------------+---------+-----------+----------------+------------+--------------------------------------------------------------------------------------------------------------+--------------+---------+------------------+-------------+
+| 6673  | \core\event\course_module_updated  | core       | updated  | course_module  | course_modules  | 142       | u     | 1         | 657        | 70            | 142                | 2       | 59        | None           | 0          | a:3:{s:10:"modulename";s:11:"certificate";s:10:"instanceid";s:2:"20";s:4:"name";s:18:"certificado prueba";}  | 1476887917   | web     | 0:0:0:0:0:0:0:1  | None        |
+| 6675  | \core\event\course_viewed          | core       | viewed   | course         | None            | None      | r     | 2         | 537        | 50            | 59                 | 2       | 59        | None           | 0          | N;                                                                                                           | 1476888001   | web     | 0:0:0:0:0:0:0:1  | None        |
+| 6674  | \core\event\course_viewed          | core       | viewed   | course         | None            | None      | r     | 2         | 537        | 50            | 59                 | 2       | 59        | None           | 0          | N;                                                                                                           | 1476887920   | web     | 0:0:0:0:0:0:0:1  | None        |
++-------+------------------------------------+------------+----------+----------------+-----------------+-----------+-------+-----------+------------+---------------+--------------------+---------+-----------+----------------+------------+--------------------------------------------------------------------------------------------------------------+--------------+---------+------------------+-------------+
+
+# TABLE     mdlhj_lti                               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lti_submission                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lti_tool_proxies                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lti_tool_settings                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lti_types                         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_lti_types_config                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_message                           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_message_airnotifier_devices       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_message_contacts                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_message_processors                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_message_providers                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_message_read                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_message_working                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_messageinbound_datakeys           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_messageinbound_handlers           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_messageinbound_messagelist        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnet_application                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnet_host                         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnet_host2service                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnet_log                          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnet_remote_rpc                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnet_remote_service2rpc           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnet_rpc                          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnet_service                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnet_service2rpc                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnet_session                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnet_sso_access_control           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnetservice_enrol_courses         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_mnetservice_enrol_enrolments      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_modules                           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_my_pages                          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_page                              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_portfolio_instance                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_portfolio_instance_config         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_portfolio_instance_user           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_portfolio_log                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_portfolio_mahara_queue            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_portfolio_tempdata                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_post                              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_profiling                         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_publication                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_publication_extduedates           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_publication_file                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_qtype_ddimageortext               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_qtype_ddimageortext_drags         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_qtype_ddimageortext_drops         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_qtype_ddmarker                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_qtype_ddmarker_drags              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_qtype_ddmarker_drops              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_qtype_essay_options               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_qtype_match_options               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_qtype_match_subquestions          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_qtype_multichoice_options         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_qtype_randomsamatch_options       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_qtype_shortanswer_options         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question                          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_answers                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_attempt_step_data        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_attempt_steps            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_attempts                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_calculated               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_calculated_options       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_categories               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_dataset_definitions      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_dataset_items            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_datasets                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_ddwtos                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_gapselect                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_hints                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_multianswer              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_numerical                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_numerical_options        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_numerical_units          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_relation                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_response_analysis        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_response_count           pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_statistics               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_truefalse                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_question_usages                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_quiz                              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_quiz_attempts                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_quiz_feedback                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_quiz_grades                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_quiz_overrides                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_quiz_overview_regrades            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_quiz_reports                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_quiz_sections                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_quiz_slots                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_quiz_statistics                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_rating                            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_registration_hubs                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_repository                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_repository_instance_config        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_repository_instances              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_resource                          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_resource_old                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_role                              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_role_allow_assign                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_role_allow_override               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_role_allow_switch                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_role_assignments                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_role_capabilities                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_role_context_levels               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_role_names                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_role_sortorder                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scale                             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scale_history                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scorm                             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scorm_aicc_session                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scorm_scoes                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scorm_scoes_data                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scorm_scoes_track                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scorm_seq_mapinfo                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scorm_seq_objective               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scorm_seq_rolluprule              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scorm_seq_rolluprulecond          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scorm_seq_rulecond                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_scorm_seq_ruleconds               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_sessions                          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  FAIL
+#
+# Data differences found among rows:
+--- `bnexcl_moodle_respaldo`.`mdlhj_sessions`
++++ `bnexcl_moodle`.`mdlhj_sessions`
+@@ -1,5 +1,5 @@
+ +------+--------+-----------------------------+---------+-----------+--------------+---------------+------------------+------------------+
+ | id   | state  | sid                         | userid  | sessdata  | timecreated  | timemodified  | firstip          | lastip           |
+ +------+--------+-----------------------------+---------+-----------+--------------+---------------+------------------+------------------+
+-| 341  | 0      | 95j9l915m2g17fpqoisp3l9897  | 2       | None      | 1476878472   | 1476887413    | 0:0:0:0:0:0:0:1  | 0:0:0:0:0:0:0:1  |
++| 341  | 0      | 95j9l915m2g17fpqoisp3l9897  | 2       | None      | 1476878472   | 1476887998    | 0:0:0:0:0:0:0:1  | 0:0:0:0:0:0:0:1  |
+ +------+--------+-----------------------------+---------+-----------+--------------+---------------+------------------+------------------+
+
+# TABLE     mdlhj_stats_daily                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_stats_monthly                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_stats_user_daily                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_stats_user_monthly                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_stats_user_weekly                 pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_stats_weekly                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_survey                            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_survey_analysis                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_survey_answers                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_survey_questions                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tag                               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tag_area                          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tag_coll                          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tag_correlation                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tag_instance                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_task_adhoc                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_task_scheduled                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tool_cohortroles                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tool_customlang                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tool_customlang_components        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tool_monitor_events               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tool_monitor_history              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tool_monitor_rules                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tool_monitor_subscriptions        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tool_recyclebin_category          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_tool_recyclebin_course            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_upgrade_log                       pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_url                               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_user                              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  FAIL
+#
+# Data differences found among rows:
+--- `bnexcl_moodle_respaldo`.`mdlhj_user`
++++ `bnexcl_moodle`.`mdlhj_user`
+@@ -1,5 +1,5 @@
+ +-----+---------+------------+---------------+----------+------------+-------------+-----------+---------------------------------------------------------------+-----------+------------+-----------+--------------------------------+------------+------+--------+--------+------+------+---------+---------+--------------+-------------+----------+-----------+----------+-------+---------------+--------+-----------+--------------+-------------+-------------+---------------+------------------+---------+----------+------+--------------+--------------------+-------------+-------------+--------------+----------------+--------------+--------------+---------------+---------------+-----------+-------------------+--------------------+-------------+----------------+
+ | id  | auth    | confirmed  | policyagreed  | deleted  | suspended  | mnethostid  | username  | password                                                      | idnumber  | firstname  | lastname  | email                          | emailstop  | icq  | skype  | yahoo  | aim  | msn  | phone1  | phone2  | institution  | department  | address  | city      | country  | lang  | calendartype  | theme  | timezone  | firstaccess  | lastaccess  | lastlogin   | currentlogin  | lastip           | secret  | picture  | url  | description  | descriptionformat  | mailformat  | maildigest  | maildisplay  | autosubscribe  | trackforums  | timecreated  | timemodified  | trustbitmask  | imagealt  | lastnamephonetic  | firstnamephonetic  | middlename  | alternatename  |
+ +-----+---------+------------+---------------+----------+------------+-------------+-----------+---------------------------------------------------------------+-----------+------------+-----------+--------------------------------+------------+------+--------+--------+------+------+---------+---------+--------------+-------------+----------+-----------+----------+-------+---------------+--------+-----------+--------------+-------------+-------------+---------------+------------------+---------+----------+------+--------------+--------------------+-------------+-------------+--------------+----------------+--------------+--------------+---------------+---------------+-----------+-------------------+--------------------+-------------+----------------+
+-| 2   | manual  | 1          | 0             | 0        | 0          | 1           | admin     | $2y$10$cWRjdInsl2ZXTlgJ/ajk7O6oJ3RBXqh..QdSibf50PLUi6rX6Qpge  |           | Pablo      | Cerda     | pablo.cerda@angloamerican.com  | 0          |      |        |        |      |      |         |         |              |             |          | santiago  | CL       | es    | gregorian     |        | UTC       | 1467773351   | 1476887361  | 1476823466  | 1476878472    | 0:0:0:0:0:0:0:1  |         | 0        |      |              | 1                  | 1           | 0           | 1            | 1              | 0            | 0            | 1471366696    | 0             |           |                   |                    |             |                |
++| 2   | manual  | 1          | 0             | 0        | 0          | 1           | admin     | $2y$10$cWRjdInsl2ZXTlgJ/ajk7O6oJ3RBXqh..QdSibf50PLUi6rX6Qpge  |           | Pablo      | Cerda     | pablo.cerda@angloamerican.com  | 0          |      |        |        |      |      |         |         |              |             |          | santiago  | CL       | es    | gregorian     |        | UTC       | 1467773351   | 1476887998  | 1476823466  | 1476878472    | 0:0:0:0:0:0:0:1  |         | 0        |      |              | 1                  | 1           | 0           | 1            | 1              | 0            | 0            | 1471366696    | 0             |           |                   |                    |             |                |
+ +-----+---------+------------+---------------+----------+------------+-------------+-----------+---------------------------------------------------------------+-----------+------------+-----------+--------------------------------+------------+------+--------+--------+------+------+---------+---------+--------------+-------------+----------+-----------+----------+-------+---------------+--------+-----------+--------------+-------------+-------------+---------------+------------------+---------+----------+------+--------------+--------------------+-------------+-------------+--------------+----------------+--------------+--------------+---------------+---------------+-----------+-------------------+--------------------+-------------+----------------+
+
+# TABLE     mdlhj_user_devices                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_user_enrolments                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_user_info_category                pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_user_info_data                    pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_user_info_field                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_user_lastaccess                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  FAIL
+#
+# Data differences found among rows:
+--- `bnexcl_moodle_respaldo`.`mdlhj_user_lastaccess`
++++ `bnexcl_moodle`.`mdlhj_user_lastaccess`
+@@ -1,5 +1,5 @@
+ +------+---------+-----------+-------------+
+ | id   | userid  | courseid  | timeaccess  |
+ +------+---------+-----------+-------------+
+-| 139  | 2       | 59        | 1476887396  |
++| 139  | 2       | 59        | 1476887998  |
+ +------+---------+-----------+-------------+
+
+# TABLE     mdlhj_user_password_history             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_user_password_resets              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_user_preferences                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_user_private_key                  pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_wiki                              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_wiki_links                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_wiki_locks                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_wiki_pages                        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_wiki_subwikis                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_wiki_synonyms                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_wiki_versions                     pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop                          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop_aggregations             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop_assessments              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop_assessments_old          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop_comments_old             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop_elements_old             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop_grades                   pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop_grades_old               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop_old                      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop_rubrics_old              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop_stockcomments_old        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop_submissions              pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshop_submissions_old          pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshopallocation_scheduled      pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshopeval_best_settings        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshopform_accumulative         pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshopform_comments             pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshopform_numerrors            pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshopform_numerrors_map        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshopform_rubric               pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshopform_rubric_config        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+# TABLE     mdlhj_workshopform_rubric_levels        pass    pass    -
+#           - Compare table checksum                                FAIL
+#           - Find row differences                                  pass
+
+# Database consistency check failed.
+#
+# ...done
+
+Execution of utility: 'mysqldbcompare --server1=root:@localhost bnexcl_moodle_respaldo:bnexcl_moodle --run-all-tests' ended with return code '1' but no error message was streamed to the standard error, please review the output from its execution.
+
+mysqluc>

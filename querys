@@ -1,0 +1,49 @@
+-------------> Insertar el curso en la tabla de curso <------------------
+
+mysql_query("INSERT INTO mdlhj_course (category,sortorder,fullname,shortname,summaryformat,format,showgrades,newsitems,startdate,marker,maxbytes,legacyfiles,showreports,visible,visibleold,groupmode,groupmodeforce,defaultgroupingid,timecreated,timemodified,requested,enablecompletion,completionnotify) values ('$Categoria','10003','$Nombre','$Nombre','1','topics','1','1',current_timestamp,'0','0','0','0','1','1','0','0','0',current_timestamp,current_timestamp,'0','0','0')",$link) or die ("<h2> Error en la creación del curso (_course) </h2>" );
+
+
+-------------> Actualizar la cantidad de cursos en la categoria especifica <------------------
+
+mysql_query("UPDATE mdl_course_categories set coursecount=coursecount+1 where id=2" ,$link) or die ("<h2> Error en la actualización de la tabla course_categories </h2>" );  
+
+-------------> Insertar el curso con sus opciones en la tabla course_format_options <---------
+
+mysql_query("INSERT INTO mdl_course_format_options(courseid,format,sectionid,name,value) values ((SELECT id FROM mdl_course WHERE fullname=$Nombre and category=$Categoria),'topics',DEFAULT,'numsections', 2) " ,$link) or die ("<h2> Error en la actualización de la tabla course_format_options campo NUMSECTION </h2>" );  
+
+mysql_query("INSERT INTO mdl_course_format_options(courseid,format,sectionid,name,value) values ((SELECT id FROM mdl_course WHERE fullname=$Nombre and category=$Categoria),'topics',DEFAULT,'hiddensections', DEFAULT) " ,$link) or die ("<h2> Error en la actualización de la tabla course_format_options campo HIDDENSECTIONS </h2>" ); 
+
+mysql_query("INSERT INTO mdl_course_format_options(courseid,format,sectionid,name,value) values ((SELECT id FROM mdl_course WHERE fullname=$Nombre and category=$Categoria),'topics',DEFAULT,'coursedisplay', DEFAULT) " ,$link) or die ("<h2> Error en la actualización de la tabla course_format_options campo COURSEDIPLAY</h2>" ); 
+
+--------------------> Actualizar nombres de los temas <-------------------------
+
+mysql_query(" UPDATE mdl_course_sections SET name=Pruebas  where ((SELECT id FROM [mdl_course] WHERE fullname=$Nombre and category=$Categoria)=course AND section=1) " ,$link) or die ("<h2> Error en la actualización de la tabla course_format_options campo COURSEDIPLAY</h2>" ); 
+
+---------------------------------> Crear Cuestionarios <-----------------------
+
+INSERT INTO [dbo].[mdl_quiz] (course,name, introformat, timeopen,timeclose,timelimit,overduehandling,
+graceperiod,preferredbehaviour,canredoquestions,attempts,attemptonlast,grademethod,decimalpoints,questiondecimalpoints,
+reviewattempt,reviewcorrectness,reviewmarks,reviewspecificfeedback,reviewgeneralfeedback,reviewrightanswer,
+reviewoverallfeedback,questionsperpage,navmethod,shuffleanswers,sumgrades,grade, timecreated,timemodified,delay1,
+delay2,showuserpicture,showblocks,completionattemptsexhausted,completionpass)
+VALUES ((SELECT id FROM mdl_course WHERE fullname=$Nombre and category=$Categoria),'Prueba Técnica', '1','0','0','3600','autosubmit','0','deferredfeedback','0','0','0','1','2','-1','0000','0000','4368','0000','0000','0000','4368','1','free','1','0.00000','10.00000','0','0000','0','0','0','0','0','0')	;)	
+
+-------------> INSERTAR CUESTIONARIO EN COURSE_MODULES<--------------------
+
+INSERT INTO [dbo].[mdl_course_modules](course, module, section, added, score, indent, visible, visibleold, groupmode, groupingid, completion, completionview, completionexpected, showdescription)
+VALUES ((select id from [dbo].[mdl_course] where fullname='" .$Nombre. "' and category='" .$Categoria. "'), '16', (select id from [dbo].[mdl_course_sections] where course=(select id from [dbo].[mdl_course] where fullname='" .$Nombre. "' and category='" .$Categoria. "') and section=2),'1476211509','0','0','1','1','0','0','0','0','0','0');
+
+----------------> Certificado <-------------
+
+INSERT INTO mdlhj_certificate (course, name, introformat, savecert, certificatetype, orientation, bordecolor, printdate, printgrade, gradefmt, printsignature, printseal ) VALUES ((select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "'), 'Certificado Aprobación Proceso Cambio de Tramos', '1', '1', 'letter_non_embedded, 'L', '2', '1','1', '1' ,'Line.png', 'LogoANGLO.jpg');
+
+------------> Ingresar pruebas a  _grade_items  <--------------
+
+INSERT INTO mdlhj_grade_items (courseid, categoryid, itemname, itemtype, itemmodule, iteminstance) Values ((select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "'), )
+
+
+--------------> INGRESAR CURSO A PATH <------------
+insert into mdlhj_grade_categories(courseid, depth, path, fullname, aggregation, keephigh, droplow, aggregateonlygraded, aggregateoutcomes, timecreated, timemodified, hidden)
+VALUES ((select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "'), '1', '0', '?', '13', '0', '0', '1', '0', current_timestamp, current_timestamp, '0');
+
+update mdlhj_grade_categories set path= concat('/',id,'/') where courseid=56;
