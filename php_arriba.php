@@ -229,7 +229,7 @@ VALUES
 
 //ejecución de querys
 if(mysqli_query($link,$sql)){ 
-        print "Pruebas Creadas Exitosamente"; 
+        print "<FONT SIZE=6>Pruebas Creadas Exitosamente</FONT>"; 
     }else{ 
         print "<br>No ha sido posible crear el curso. Existe un error en la query name='SQL'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
@@ -783,7 +783,8 @@ if(mysqli_query($link,$sql54)){
     }	
 	
 //-------------------------------------- QUERY PARA AGREGAR METODO DE MATRICULACIÓN AL CURSO---------------------------------
-//----------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------
+
 
 $sql37="INSERT INTO mdlhj_enrol (enrol, status, courseid, sortorder, enrolperiod, enrolstartdate, enrolenddate, expirynotify, expirythreshold, notifyall, timecreated, timemodified)
 VALUES ('manual', '0', $idcurso, '0', '0','0','0','0','0','0','$Time','$Time');";
@@ -796,7 +797,7 @@ if(mysqli_query($link,$sql37)){
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }	
-	print "<a target='_blank' href='http://localhost/an/course/view.php?id=" . $idcurso  ."'>Ir a las Pruebas creadas</a>";
+	print "<FONT SIZE=6><a target='_blank' href='http://localhost/an/course/view.php?id=" . $idcurso  ."'>Ir a las Pruebas creadas</a></FONT>";
 	
 
 //-----------------------------------------------------------------------------------------------------------------------------------
