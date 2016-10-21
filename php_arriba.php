@@ -790,7 +790,7 @@ VALUES ('manual', '0', $idcurso, '0', '0','0','0','0','0','0','$Time','$Time');"
 
 
 if(mysqli_query($link,$sql37)){ 
-       print ""; 
+       print "<br></br>"; 
     }else{ 
         print "<br>No ha sido posible agregar el metodo de matriculación MANUAL. Existe un error en la query name='SQL37'<br>"; 
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
