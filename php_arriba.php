@@ -3,10 +3,10 @@
 $link = mysqli_connect("localhost","root","","bnexcl_moodle");
 $var59='';
 $var60='';
+$var62='';
 
 //obtengo valores del formulario
 $Nombre=TIME();
-$Time=TIME();
 $Categoria=$_POST['categoria'];
 
 //Obtiene la longitud del string ---- valida el ingreso del nombre
@@ -22,14 +22,14 @@ $req = (strlen($Nombre));
 //----------------------------------------------------------------------------------
 $sql= "INSERT INTO mdlhj_course (category,fullname,shortname,summaryformat,format,showgrades,newsitems,startdate,marker,maxbytes,legacyfiles,showreports,visible,
 visibleold,groupmode,groupmodeforce,defaultgroupingid, lang, timecreated,timemodified,requested,enablecompletion,completionnotify, cacherev) 
-values ('$Categoria','$Nombre','$Nombre','1','topics','1','5','$Time','0','0','0','0','1','1','0','0','0','es_an','$Time','$Time','0','1','0', $Nombre);";
+values ('$Categoria','$Nombre','$Nombre','1','topics','1','5',current_timestamp,'0','0','0','0','1','1','0','0','0','es_an',current_timestamp,current_timestamp,'0','1','0', $Nombre);";
 
 $sql10="INSERT INTO mdlhj_grade_categories(courseid, depth, path, fullname, aggregation, keephigh, droplow, aggregateonlygraded, aggregateoutcomes, timecreated, timemodified, hidden)
-    VALUES ((select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "'), '1', '0', '?', '13', '0', '0', '1', '0', '$Time', '$Time', '0');";
+    VALUES ((select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "'), '1', '0', '?', '13', '0', '0', '1', '0', current_timestamp, current_timestamp, '0');";
 
 $sql13="INSERT INTO mdlhj_grade_categories_history (action, oldid, source, timemodified, courseid, depth, path, fullname, aggregation, aggregateonlygraded)
 VALUES ('2',(select id from mdlhj_grade_categories where courseid=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "'))
-	,'system','$Time', (select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "'),
+	,'system',current_timestamp, (select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "'),
 	'1', (select path from mdlhj_grade_categories where courseid=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "')), '?', '13', '1');";
 
 $sql11="UPDATE mdlhj_grade_categories set path= concat('/',id,'/') where courseid=(SELECT id FROM mdlhj_course WHERE fullname='" . $Nombre . "' and category=" . $Categoria .");";
@@ -80,7 +80,7 @@ VALUES ((SELECT id FROM mdlhj_course WHERE fullname='" .$Nombre. "' and category
 'autosubmit','0','deferredfeedback','0',
 '1','0','1','2','-1','0000','0000','4368',
 '16','16','16','16','1','free','1',
-'5.00000','10.00000','$Time','$Time','0','0','1',
+'5.00000','10.00000','0','0000','0','0','1',
 '0','1','1');";
 
 $sql12="INSERT INTO mdlhj_grade_items (courseid, categoryid, itemname, itemtype, itemmodule, iteminstance, itemnumber, gradepass, sortorder, hidden,
@@ -88,7 +88,7 @@ timecreated, timemodified)
 VALUES ((select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "'), 
 (select id from mdlhj_grade_categories where courseid=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "')),
  'Prueba Tecnica', 'mod','quiz',(Select id from mdlhj_quiz where course=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "')
- and name='Prueba Tecnica'),'0', '8.00000','2', '1', '$Time', '$Time');";
+ and name='Prueba Tecnica'),'0', '8.00000','2', '1', current_timestamp, current_timestamp);";
 
 $sql7="INSERT INTO mdlhj_course_modules(course, module, instance,  section, idnumber, added, score, indent, visible, visibleold, groupmode, groupingid, completion, 
 completionview, completionexpected, showdescription)
@@ -98,7 +98,7 @@ VALUES (
 (select id from mdlhj_quiz where course=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "') and name='Prueba Tecnica'),
 (select id from mdlhj_course_sections where 
 course=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "') and section=1),
-'','$Time','0','0','1','1','0','0','2',
+'',current_timestamp,'0','0','1','1','0','0','2',
 '0','0','0');";
 	
 $sql16="UPDATE mdlhj_course_sections set sequence=(select id from mdlhj_course_modules where 
@@ -111,7 +111,7 @@ completionview, completionexpected, showdescription)
 	VALUES ((select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "'), '16',(select id from mdlhj_quiz where 
 	course=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "') and name='Prueba Seguridad') ,
 	(select id from mdlhj_course_sections where course=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "') and section=2),
-	'$Time','0','0','1','1','0','0','2','0','0','0');";
+	'current_timestamp','0','0','1','1','0','0','2','0','0','0');";
 
 $sql15="INSERT INTO mdlhj_quiz_sections(quizid, firstslot, heading, shufflequestions)
 VALUES ((Select id from mdlhj_quiz where course= (select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "')
@@ -125,19 +125,19 @@ VALUES ((SELECT id FROM mdlhj_course WHERE fullname='" .$Nombre. "' and category
 ,'Prueba Seguridad', '1','0','0','3600',
 'autosubmit','0','deferredfeedback','0','1','0','1',
 '2','-1','0000','0000','4368','16','16','16','16',
-'1','free','1','5.00000','10.00000','$Time','$Time','0','0','1',
+'1','free','1','5.00000','10.00000','0','0000','0','0','1',
 '0','1','1');";
 
 $sql18="INSERT INTO mdlhj_grade_items (courseid, categoryid, itemname, itemtype, itemmodule, iteminstance, itemnumber, sortorder, hidden, timecreated, timemodified) 
 VALUES ((select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "'), 
 (select id from mdlhj_grade_categories where courseid=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "')),
  'Prueba Seguridad', 'mod','quiz',(Select id from mdlhj_quiz where course=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "')
- and name='Prueba Seguridad'), '0','3','1', '$Time','$Time');";
+ and name='Prueba Seguridad'), '0','3','1', current_timestamp, current_timestamp);";
  
 $sql61="INSERT INTO mdlhj_grade_items (courseid, itemtype, iteminstance, gradetype, grademax, grademin, gradepass, sortorder, timecreated, timemodified) 
 VALUES ((select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "'), 
 'course',(select id from mdlhj_grade_categories where courseid=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "')),
-'1','100.00000', '0.00000', '0.00000', '1', '$Time', '$Time'  );";
+'1','100.00000', '0.00000', '0.00000', '1', current_timestamp, current_timestamp  );";
 
 $sql19="INSERT INTO mdlhj_course_modules(course, module, instance,  section, idnumber, added, score, indent, visible, visibleold, groupmode, groupingid, completion, 
 completionview, completionexpected, showdescription)
@@ -146,7 +146,7 @@ VALUES (
 '16',
 (select id from mdlhj_quiz where course=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "') and name='Prueba Seguridad') ,
 (select id from mdlhj_course_sections where  course=(select id from mdlhj_course where fullname='" .$Nombre. "' and category='" .$Categoria. "') and section=1),
-'','$Time','0','0','1','1','0','0','2',
+'',current_timestamp,'0','0','1','1','0','0','2',
 '0','0','0');";
 
 $sql20="UPDATE mdlhj_course_sections set sequence=concat(sequence,',',(select id from mdlhj_course_modules where 
@@ -174,27 +174,27 @@ gradefmt, printsignature, printseal ) VALUES ((select id from mdlhj_course where
 $sql22="INSERT INTO mdlhj_question (category, parent, name, questiontext, questiontextformat, generalfeedback, generalfeedbackformat, defaultmark, penalty,
 qtype, length, timecreated, timemodified)
 VALUES 
-((select idcategoryquestion from mdlhj_question_relation where idcategorycourse='".$Categoria."'),'','Pregunta Tecnica Aleatoria 1','0','0','','0','1.0000000','0.0000000','random','1', '$Time', '$Time');";
+((select idcategoryquestion from mdlhj_question_relation where idcategorycourse='".$Categoria."'),'','Pregunta Tecnica Aleatoria 1','0','0','','0','1.0000000','0.0000000','random','1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP );";
 
 $sql24="INSERT INTO mdlhj_question (category, parent, name, questiontext, questiontextformat, generalfeedback, generalfeedbackformat, defaultmark, penalty,
 qtype, length, timecreated, timemodified)
 VALUES 
-((select idcategoryquestion from mdlhj_question_relation where idcategorycourse='".$Categoria."'),'','Pregunta Tecnica Aleatoria 2','0','0','','0','1.0000000','0.0000000','random','1', '$Time', '$Time' );";
+((select idcategoryquestion from mdlhj_question_relation where idcategorycourse='".$Categoria."'),'','Pregunta Tecnica Aleatoria 2','0','0','','0','1.0000000','0.0000000','random','1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP );";
 
 $sql25="INSERT INTO mdlhj_question (category, parent, name, questiontext, questiontextformat, generalfeedback, generalfeedbackformat, defaultmark, penalty,
 qtype, length, timecreated, timemodified)
 VALUES 
-((select idcategoryquestion from mdlhj_question_relation where idcategorycourse='".$Categoria."'),'','Pregunta Tecnica Aleatoria 3','0','0','','0','1.0000000','0.0000000','random','1', '$Time', '$Time' );";
+((select idcategoryquestion from mdlhj_question_relation where idcategorycourse='".$Categoria."'),'','Pregunta Tecnica Aleatoria 3','0','0','','0','1.0000000','0.0000000','random','1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP );";
 
 $sql26="INSERT INTO mdlhj_question (category, parent, name, questiontext, questiontextformat, generalfeedback, generalfeedbackformat, defaultmark, penalty,
 qtype, length, timecreated, timemodified)
 VALUES 
-((select idcategoryquestion from mdlhj_question_relation where idcategorycourse='".$Categoria."'),'','Pregunta Tecnica Aleatoria 4','0','0','','0','1.0000000','0.0000000','random','1', '$Time','$Time' );";
+((select idcategoryquestion from mdlhj_question_relation where idcategorycourse='".$Categoria."'),'','Pregunta Tecnica Aleatoria 4','0','0','','0','1.0000000','0.0000000','random','1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP );";
 
 $sql27="INSERT INTO mdlhj_question (category, parent, name, questiontext, questiontextformat, generalfeedback, generalfeedbackformat, defaultmark, penalty,
 qtype, length, timecreated, timemodified)
 VALUES 
-((select idcategoryquestion from mdlhj_question_relation where idcategorycourse='".$Categoria."'),'','Pregunta Tecnica Aleatoria 5','0','0','','0','1.0000000','0.0000000','random','1', '$Time', '$Time' );";
+((select idcategoryquestion from mdlhj_question_relation where idcategorycourse='".$Categoria."'),'','Pregunta Tecnica Aleatoria 5','0','0','','0','1.0000000','0.0000000','random','1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP );";
 //--------------------------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------------------------------
 //query para ingresar las preguntas Seguridad--- Se debe realizar 5 veces el proceso
@@ -202,27 +202,27 @@ VALUES
 $sql38="INSERT INTO mdlhj_question (category, parent, name, questiontext, questiontextformat, generalfeedback, generalfeedbackformat, defaultmark, penalty,
 qtype, length, timecreated, timemodified)
 VALUES 
-('160','','Pregunta Seguridad Aleatoria 1','0','0','','0','1.0000000','0.0000000','random','1', '$Time', '$Time' );";
+('160','','Pregunta Seguridad Aleatoria 1','0','0','','0','1.0000000','0.0000000','random','1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP );";
 
 $sql39="INSERT INTO mdlhj_question (category, parent, name, questiontext, questiontextformat, generalfeedback, generalfeedbackformat, defaultmark, penalty,
 qtype, length, timecreated, timemodified)
 VALUES 
-('160','','Pregunta Seguridad Aleatoria 2','0','0','','0','1.0000000','0.0000000','random','1', '$Time', '$Time' );";
+('160','','Pregunta Seguridad Aleatoria 2','0','0','','0','1.0000000','0.0000000','random','1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP );";
 
 $sql40="INSERT INTO mdlhj_question (category, parent, name, questiontext, questiontextformat, generalfeedback, generalfeedbackformat, defaultmark, penalty,
 qtype, length, timecreated, timemodified)
 VALUES 
-('160','','Pregunta Seguridad Aleatoria 3','0','0','','0','1.0000000','0.0000000','random','1', '$Time','$Time');";
+('160','','Pregunta Seguridad Aleatoria 3','0','0','','0','1.0000000','0.0000000','random','1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP );";
 
 $sql41="INSERT INTO mdlhj_question (category, parent, name, questiontext, questiontextformat, generalfeedback, generalfeedbackformat, defaultmark, penalty,
 qtype, length, timecreated, timemodified)
 VALUES 
-('160','','Pregunta Seguridad Aleatoria 4','0','0','','0','1.0000000','0.0000000','random','1', '$Time','$Time' );";
+('160','','Pregunta Seguridad Aleatoria 4','0','0','','0','1.0000000','0.0000000','random','1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP );";
 
 $sql42="INSERT INTO mdlhj_question (category, parent, name, questiontext, questiontextformat, generalfeedback, generalfeedbackformat, defaultmark, penalty,
 qtype, length, timecreated, timemodified)
 VALUES 
-('160','','Pregunta Seguridad Aleatoria 5','0','0','','0','1.0000000','0.0000000','random','1', '$Time', '$Time' );";
+('160','','Pregunta Seguridad Aleatoria 5','0','0','','0','1.0000000','0.0000000','random','1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP );";
 
 
 
@@ -783,8 +783,7 @@ if(mysqli_query($link,$sql54)){
     }	
 	
 //-------------------------------------- QUERY PARA AGREGAR METODO DE MATRICULACIÓN AL CURSO---------------------------------
-//---------------------------------------------------------------------------------------------------------------------------
-
+//----------------------------------------------------------------------------------------------------------------------------------
 
 $sql37="INSERT INTO mdlhj_enrol (enrol, status, courseid, sortorder, enrolperiod, enrolstartdate, enrolenddate, expirynotify, expirythreshold, notifyall, timecreated, timemodified)
 VALUES ('manual', '0', $idcurso, '0', '0','0','0','0','0','0','$Time','$Time');";
@@ -797,7 +796,6 @@ if(mysqli_query($link,$sql37)){
         print "<i>Error:</i> ". mysqli_error($link)." <i>Código:</i> ".mysqli_errno($link) ; 
         exit(); 
     }	
-	print "<FONT SIZE=6><a target='_blank' href='http://localhost/an/course/view.php?id=" . $idcurso  ."'>Ir a las Pruebas creadas</a></FONT>";
 	
 
 //-----------------------------------------------------------------------------------------------------------------------------------
@@ -884,6 +882,22 @@ if(mysqli_query($link,$sql57)){
         exit(); 
     }	
 	
+	
+//-----------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------Imprimir el nombre completo de las pruebas creadas-----------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------
+	
+$sql62="select categoryname from mdlhj_category_relation where categoryid='" .$Categoria. "';"
+$execute62 = mysqli_query($link, $sql62)
+if($row = mysqli_fetch_array($execute62))
+	{
+	   $var62 = $row[0];
+	}	
+		
+	
+print "<FONT SIZE=6><a>Las Pruebas creadas se están en: "$var62.$idcurso" </a></FONT>";
+print "<FONT SIZE=6><a target='_blank' href='http://localhost/an/course/view.php?id=" . $idcurso  ."'>Ir a las Pruebas creadas</a></FONT>";
+
 	
 //-----------------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------Cierro Conexión-----------------------------------------------------------------------------
